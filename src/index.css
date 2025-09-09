@@ -1,0 +1,272 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Transport Panel Design System - Orange & White Theme
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 24 7% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 24 7% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 24 7% 15%;
+
+    /* Orange transport theme */
+    --primary: 24 100% 58%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 33 100% 65%;
+    --primary-dark: 15 100% 50%;
+
+    --secondary: 33 7% 96%;
+    --secondary-foreground: 24 7% 15%;
+
+    --muted: 33 7% 96%;
+    --muted-foreground: 24 5% 55%;
+
+    --accent: 33 50% 92%;
+    --accent-foreground: 24 7% 15%;
+
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 33 20% 90%;
+    --input: 0 0% 100%;
+    --ring: 24 100% 58%;
+
+    /* Transport specific colors */
+    --transport-gradient-start: 24 100% 58%;
+    --transport-gradient-end: 33 100% 65%;
+    --transport-shadow: 24 100% 58% / 0.15;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom orange sidebar styles */
+.orange-sidebar {
+  background-color: rgb(249 115 22) !important; /* orange-500 */
+}
+
+.orange-sidebar * {
+  background-color: rgb(249 115 22) !important;
+}
+
+.orange-sidebar [data-sidebar="sidebar"] {
+  background-color: rgb(249 115 22) !important;
+}
+
+.orange-sidebar [data-sidebar="content"] {
+  background-color: rgb(249 115 22) !important;
+}
+
+.orange-sidebar [data-sidebar="group"] {
+  background-color: rgb(249 115 22) !important;
+}
+
+.orange-sidebar [data-sidebar="group-content"] {
+  background-color: rgb(249 115 22) !important;
+}
+
+.orange-sidebar [data-sidebar="menu"] {
+  background-color: rgb(249 115 22) !important;
+}
+
+/* Override any default sidebar styling */
+.orange-sidebar [data-sidebar] {
+  background-color: rgb(249 115 22) !important;
+}
+
+/* Ensure menu items are properly styled */
+.orange-sidebar [data-sidebar="menu-item"] {
+  background-color: rgb(249 115 22) !important;
+}
+
+.orange-sidebar [data-sidebar="menu-button"] {
+  background-color: rgb(249 115 22) !important;
+}
+
+/* Mobile sidebar styling */
+.orange-sidebar [data-mobile="true"] {
+  background-color: rgb(249 115 22) !important;
+}
+
+/* Override any bg-sidebar classes */
+.bg-sidebar.orange-sidebar,
+.orange-sidebar .bg-sidebar {
+  background-color: rgb(249 115 22) !important;
+}
+
+/* Ensure proper z-index and positioning */
+.orange-sidebar {
+  z-index: 10;
+}
+
+/* Handle any potential border issues */
+.orange-sidebar [data-sidebar] {
+  border-color: rgb(194 65 12) !important; /* orange-700 for borders */
+}
+
+/* Sidebar header styling */
+.orange-sidebar [data-sidebar="header"] {
+  background-color: rgb(249 115 22) !important; /* orange-500 */
+  border-bottom-color: rgb(194 65 12) !important; /* orange-700 */
+}
+
+/* Ensure proper text sizing in sidebar */
+.orange-sidebar h1 {
+  font-size: 1.25rem !important; /* text-xl */
+  font-weight: 700 !important; /* font-bold */
+  line-height: 1.75rem !important; /* leading-tight */
+}
+
+.orange-sidebar p {
+  font-size: 0.875rem !important; /* text-sm */
+  line-height: 1.25rem !important; /* leading-tight */
+}
+
+/* Menu button styling */
+.orange-sidebar [data-sidebar="menu-button"] {
+  font-size: 1.125rem !important; /* text-lg */
+  padding: 0.75rem 1rem !important; /* py-3 px-4 */
+}
+
+.orange-sidebar [data-sidebar="menu-button"] span {
+  font-size: 1rem !important; /* text-base */
+  font-weight: 500 !important; /* font-medium */
+}
+
+/* Responsive sidebar adjustments */
+@media (max-width: 768px) {
+  .orange-sidebar [data-sidebar="header"] h1 {
+    font-size: 1.125rem !important; /* text-lg */
+  }
+  
+  .orange-sidebar [data-sidebar="header"] p {
+    font-size: 0.75rem !important; /* text-xs */
+  }
+  
+  .orange-sidebar [data-sidebar="menu-button"] {
+    font-size: 1rem !important; /* text-base */
+    padding: 0.5rem 0.75rem !important; /* py-2 px-3 */
+  }
+}
+
+/* Ensure smooth transitions */
+.orange-sidebar * {
+  transition: all 0.2s ease-in-out;
+}
+
+
+
+/* Enhanced visual effects for larger UI */
+.orange-sidebar [data-sidebar="header"] {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+}
+
+.orange-sidebar [data-sidebar="menu-button"]:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1) !important;
+}
+
+.orange-sidebar [data-sidebar="menu-button"]:active {
+  transform: translateY(0) !important;
+}
+
+/* Logo container enhancement */
+.orange-sidebar [data-sidebar="header"] > div > div:first-child {
+  box-shadow: 0 8px 25px -8px rgba(0, 0, 0, 0.3) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+/* Driver Details UI Enhancements */
+.driver-profile-card {
+  /* Animation removed */
+}
+
+.driver-info-section {
+  /* Animation removed */
+}
+
+.driver-avatar {
+  /* Animation removed */
+}
+
+.status-card {
+  /* Animation removed */
+}
